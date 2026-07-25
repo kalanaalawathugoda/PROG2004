@@ -15,5 +15,30 @@ public class AssignmentOne {
         
         gp1.prescribeMedicine();
 
+            Specialist specialist1 = new Specialist(
+            201,
+            "Dr John Smith",
+            new String[]{"Monday", "Thursday"},
+            "Cardiology");
+        
+        System.out.println();    
+        System.out.println(specialist1);
+        System.out.println();
+        
+        specialist1.provideSpecialistConsultation();
+
+        Nurse nurse1 = new Nurse(
+            301,
+            "Nurse Emily Johnson",
+            new String[]{"Tuesday", "Thursday"},
+            "Senior Nurse");
+
+        System.out.println();
+        System.out.println(nurse1);
+        System.out.println();
+        
+        nurse1.takeBloodSample();
     }
-}
+
+
+    }
