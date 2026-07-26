@@ -94,7 +94,28 @@ public class AssignmentOne {
         nurse1.takeBloodSample();
         dietitian1.createDietPlan();
 
+            System.out.println();
+    System.out.println("_______Patient Details_______");
+
+     Patient patient1 = new Patient(
+                "Kavindu LAkshitha",
+                "0712345678"
+            );
+    Patient patient2 = new Patient(
+                "Nadeesha Perera",
+                "0776543210"
+            );
+
+        System.out.println();
+        System.out.println(patient1);
+        System.out.println("__________________________________________");
+        System.out.println();
+        System.out.println(patient2);
+    
+
     }
+
+
 }
 
 
