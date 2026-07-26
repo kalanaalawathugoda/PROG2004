@@ -14,7 +14,7 @@ public class AppointmentManager {
 
     private boolean isValidTimeSlot(String appointmentTime) {
         for (String validTime : VALID_TIME_SLOTS) {
-            if (validTime.equals(appointmentTime)) {
+            if (appointmentTime.endsWith(validTime)) {
                 return true;
             }
         }
@@ -90,6 +90,52 @@ public class AppointmentManager {
             System.out.println(appointment);
             System.out.println("-------------------------");
         }
+    }
+
+        public void displayAppointmentsByProfessionalId(
+            int professionalId) {
+        System.out.println();
+        System.out.println("_____________Appointments for Professional ID: " + professionalId + "______");
+
+        boolean found = false;
+
+        for (Appointment appointment : appointments) {
+            if (appointment.getHealthProfessional().getProfessionalId() == professionalId) {
+
+                System.out.println();
+                System.out.println(appointment);
+
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No appointments found for Professional ID: " + professionalId);
+        }
+
+    }
+
+    public void displayAppointmentsByPatientPhone(
+        String mobileNumber
+    ) {
+        System.out.println();
+        System.out.println("_____________Appointments for Patient Mobile Number: " + mobileNumber + "______");
+
+        boolean found = false;
+
+        for (Appointment appointment : appointments) {
+            if (appointment.getPatient().getMobileNumber().equals(mobileNumber)) {
+
+                System.out.println();
+                System.out.println(appointment);
+
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No appointments found for Patient Mobile Number: " + mobileNumber);
+        }
+        
+
     }
 
 }

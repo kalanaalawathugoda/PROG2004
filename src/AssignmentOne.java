@@ -112,7 +112,7 @@ public class AssignmentOne {
         Appointment appointment2 = new Appointment(
                 patient2,
                 specialist1,
-                "2024-06-16 02:30 PM");
+                "2024-06-16 02:00 PM");
 
         System.out.println();
         System.out.println(appointment1);
@@ -133,7 +133,61 @@ public class AssignmentOne {
                 "General Practice");
         System.out.println("Does gp1 represent the same professional as sameGp? " + gp1.equals(sameGp)); // Should be
                                                                                                          // true
+        System.out.println();
+        System.out.println("_________Appointment Management");
 
+        AppointmentManager appointmentManager = new AppointmentManager();
+        appointmentManager.addAppointment(appointment1);
+        appointmentManager.addAppointment(appointment2);
+
+        Patient patient3 = new Patient(
+                "Amal Perera",
+                "0771234567");
+
+        Appointment appointment3 = new Appointment(
+                patient3,
+                nurse1,
+                "2024-06-15 10:00 AM");
+
+        appointmentManager.addAppointment(appointment3);
+        appointmentManager.displayAppointments();
+
+        System.out.println();
+        System.out.println("_________Double Booking Test_________");
+
+        Patient patient4 = new Patient(
+                "Nimal Silva",
+                "0719876543");
+
+        Appointment duplicateAppointment = new Appointment(
+                patient4,
+                gp1,
+                "2024-06-15 10:00 AM");
+
+        appointmentManager.addAppointment(duplicateAppointment);
+
+        System.out.println();
+        System.out.println("_________Invalid Time Test_________");
+
+        Appointment invalidTimeAppointment = new Appointment(
+                patient4,
+                gp1,
+                "2024-06-15 09:15 AM");
+
+        appointmentManager.addAppointment(invalidTimeAppointment);
+
+        System.out.println();
+        System.out.println("_________Filtering Tests_________");
+
+        appointmentManager.displayAppointmentsByProfessionalId(101);
+
+        appointmentManager.displayAppointmentsByPatientPhone(
+                "0771234567");
+
+        appointmentManager.displayAppointmentsByProfessionalId(999);
+
+        appointmentManager.displayAppointmentsByPatientPhone(
+                "0400 000 000");
     }
 
 }

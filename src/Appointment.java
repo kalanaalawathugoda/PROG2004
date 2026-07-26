@@ -40,9 +40,8 @@ public class Appointment implements Comparable<Appointment> {
 
     @Override
     public String toString() {
-        return "Appointment Time: " + appointmentTime + "\n" + patient + "\nhealthProfessional;" + "\n"
+        return "Appointment Time: " + appointmentTime + "\n" + patient + "\nHealth Professional:\n"
                 + healthProfessional;
-
     }
 
 }
