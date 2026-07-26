@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class AppointmentManager {
     private ArrayList<Appointment> appointments;
@@ -92,7 +93,7 @@ public class AppointmentManager {
         }
     }
 
-        public void displayAppointmentsByProfessionalId(
+    public void displayAppointmentsByProfessionalId(
             int professionalId) {
         System.out.println();
         System.out.println("_____________Appointments for Professional ID: " + professionalId + "______");
@@ -115,8 +116,7 @@ public class AppointmentManager {
     }
 
     public void displayAppointmentsByPatientPhone(
-        String mobileNumber
-    ) {
+            String mobileNumber) {
         System.out.println();
         System.out.println("_____________Appointments for Patient Mobile Number: " + mobileNumber + "______");
 
@@ -134,8 +134,52 @@ public class AppointmentManager {
         if (!found) {
             System.out.println("No appointments found for Patient Mobile Number: " + mobileNumber);
         }
-        
 
     }
 
-}
+    public void displayAppointmentsSortedByTime() {
+        System.out.println();
+        System.out.println("________All Scheduled Appointments (Sorted by Time)________");
+
+        if (appointments.isEmpty()) {
+            System.out.println("No appointments scheduled.");
+            return;
+        }
+
+        ArrayList<Appointment> sortedAppointments = new ArrayList<>(appointments);
+        Collections.sort(sortedAppointments);
+
+        for(Appointment appointment : sortedAppointments) {
+            System.out.println();
+            System.out.println(appointment);
+            System.out.println("__________________________");
+        }
+
+    }
+
+    public void displaySortedAppointmentsByProfessionalId(
+        int professionalId){
+        System.out.println();
+        System.out.println("_____________Appointments for Professional ID: " + professionalId);
+
+        ArrayList<Appointment> filteredAppointments = new ArrayList<Appointment>();
+
+        for (Appointment appointment : appointments) {
+            if (appointment.getHealthProfessional().getProfessionalId() == professionalId) {
+                filteredAppointments.add(appointment);
+            }
+        }
+
+        if (filteredAppointments.isEmpty()) {
+            System.out.println("No appointments found for Professional ID: " + professionalId);
+            return;
+        }
+
+        Collections.sort(filteredAppointments);
+        for(Appointment appointment : filteredAppointments) {
+            System.out.println();
+            System.out.println(appointment);
+            System.out.println("__________________________");
+        }
+    }
+ }

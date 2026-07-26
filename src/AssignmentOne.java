@@ -152,6 +152,17 @@ public class AssignmentOne {
         appointmentManager.addAppointment(appointment3);
         appointmentManager.displayAppointments();
 
+        Patient patient5 = new Patient(
+                "Kamal Perera",
+                "0779876543");
+
+        Appointment appointment4 = new Appointment(
+                patient5,
+                gp1,
+                "2024-06-16 11:00 AM");
+
+        appointmentManager.addAppointment(appointment4);
+
         System.out.println();
         System.out.println("_________Double Booking Test_________");
 
@@ -188,6 +199,13 @@ public class AssignmentOne {
 
         appointmentManager.displayAppointmentsByPatientPhone(
                 "0400 000 000");
+
+        System.out.println();
+        System.out.println("_________Sorting Tests_________");
+
+        appointmentManager.displayAppointmentsSortedByTime();
+        appointmentManager.displaySortedAppointmentsByProfessionalId(101);
+
     }
 
 }
