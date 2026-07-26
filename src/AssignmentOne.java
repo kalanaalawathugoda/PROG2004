@@ -112,9 +112,31 @@ public class AssignmentOne {
         System.out.println();
         System.out.println(patient2);
     
+        System.out.println();
+        System.out.println("_______Appointment Details_______");
+
+        Appointment appointment1 = new Appointment(
+            patient1,
+            gp1,
+            "2024-06-15 10:00 AM"
+        );
+
+        Appointment appointment2 = new Appointment(
+            patient2,
+            specialist1,
+            "2024-06-16 02:30 PM"
+        );
+
+        System.out.println();
+        System.out.println(appointment1);
+
+        System.out.println();
+        System.out.println("__________________________________________");
+        System.out.println();
+
+        System.out.println(appointment2);
 
     }
-
 
 }
 
