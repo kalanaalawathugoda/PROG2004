@@ -1,5 +1,6 @@
 public class GeneralPractitioner extends HealthProfessional {
     private String clinicRoom;
+
     public GeneralPractitioner(int professionalId, String name, String[] availableDays, String clinicRoom) {
 
         super(professionalId, name, availableDays);
@@ -9,6 +10,7 @@ public class GeneralPractitioner extends HealthProfessional {
         }
         this.clinicRoom = clinicRoom;
     }
+
     public String getClinicRoom() {
         return clinicRoom;
     }
@@ -17,7 +19,7 @@ public class GeneralPractitioner extends HealthProfessional {
         System.out.println(getName() + " can prescribe general medication.");
     }
 
-   @Override
+    @Override
     public String getProfessionalType() {
         return "General Practitioner";
     }

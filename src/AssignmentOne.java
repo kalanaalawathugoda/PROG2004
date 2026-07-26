@@ -5,78 +5,69 @@ public class AssignmentOne {
         System.out.println();
 
         GeneralPractitioner gp1 = new GeneralPractitioner(
-            101,
+                101,
                 "Dr Sarah Wilson",
-                new String[]{"Monday", "Wednesday", "Friday"},
-                "Room 1"
-        );
+                new String[] { "Monday", "Wednesday", "Friday" },
+                "Room 1");
 
         GeneralPractitioner gp2 = new GeneralPractitioner(
-            102,
+                102,
                 "Dr David Lee",
-                new String[]{"Tuesday", "Thursday"},
-                "Room 2"
-        );
-                
+                new String[] { "Tuesday", "Thursday" },
+                "Room 2");
+
         GeneralPractitioner gp3 = new GeneralPractitioner(
-            103,
+                103,
                 "Dr Olivia Martinez",
-                new String[]{"Monday", "Thursday"},
-                "Room 3"
-        );
+                new String[] { "Monday", "Thursday" },
+                "Room 3");
 
         Specialist specialist1 = new Specialist(
-            201,
+                201,
                 "Dr John Smith",
-                new String[]{"Monday", "Thursday"},
-                "Cardiology"
-        );
+                new String[] { "Monday", "Thursday" },
+                "Cardiology");
 
         Specialist specialist2 = new Specialist(
-            202,
+                202,
                 "Dr Emily Johnson",
-                new String[]{"Tuesday", "Friday"},
-                "Dermatology"
-        );
+                new String[] { "Tuesday", "Friday" },
+                "Dermatology");
 
         Nurse nurse1 = new Nurse(
-            301,
+                301,
                 "Nurse Emily Johnson",
-                new String[]{"Tuesday", "Thursday"},
-                "Senior Nurse"
-        );
+                new String[] { "Tuesday", "Thursday" },
+                "Senior Nurse");
 
         Nurse nurse2 = new Nurse(
-            302,
+                302,
                 "Nurse Michael Brown",
-                new String[]{"Monday", "Wednesday"},
-                "Junior Nurse"
-        );
+                new String[] { "Monday", "Wednesday" },
+                "Junior Nurse");
 
         Dietitian dietitian1 = new Dietitian(
-            401,
+                401,
                 "Michael Brown",
-                new String[]{"Wednesday", "Friday", "Saturday"},
-                "Clinical Nutrition"
-        );
+                new String[] { "Wednesday", "Friday", "Saturday" },
+                "Clinical Nutrition");
 
         Dietitian dietitian2 = new Dietitian(
-            402,
+                402,
                 "Sarah Lee",
-                new String[]{"Tuesday", "Thursday"},
-                "Sports Nutrition"
-        );
+                new String[] { "Tuesday", "Thursday" },
+                "Sports Nutrition");
 
         HealthProfessional[] professionals = {
-            gp1, 
-            gp2, 
-            gp3,
-            specialist1, 
-            specialist2,
-            nurse1, 
-            nurse2,
-            dietitian1, 
-            dietitian2
+                gp1,
+                gp2,
+                gp3,
+                specialist1,
+                specialist2,
+                nurse1,
+                nurse2,
+                dietitian1,
+                dietitian2
         };
 
         System.out.println("_______List of Health Professionals_______");
@@ -94,38 +85,34 @@ public class AssignmentOne {
         nurse1.takeBloodSample();
         dietitian1.createDietPlan();
 
-            System.out.println();
-    System.out.println("_______Patient Details_______");
+        System.out.println();
+        System.out.println("_______Patient Details_______");
 
-     Patient patient1 = new Patient(
+        Patient patient1 = new Patient(
                 "Kavindu LAkshitha",
-                "0712345678"
-            );
-    Patient patient2 = new Patient(
+                "0712345678");
+        Patient patient2 = new Patient(
                 "Nadeesha Perera",
-                "0776543210"
-            );
+                "0776543210");
 
         System.out.println();
         System.out.println(patient1);
         System.out.println("__________________________________________");
         System.out.println();
         System.out.println(patient2);
-    
+
         System.out.println();
         System.out.println("_______Appointment Details_______");
 
         Appointment appointment1 = new Appointment(
-            patient1,
-            gp1,
-            "2024-06-15 10:00 AM"
-        );
+                patient1,
+                gp1,
+                "2024-06-15 10:00 AM");
 
         Appointment appointment2 = new Appointment(
-            patient2,
-            specialist1,
-            "2024-06-16 02:30 PM"
-        );
+                patient2,
+                specialist1,
+                "2024-06-16 02:30 PM");
 
         System.out.println();
         System.out.println(appointment1);
@@ -140,20 +127,13 @@ public class AssignmentOne {
         System.out.println("_________Proffessional Equality test_________");
 
         GeneralPractitioner sameGp = new GeneralPractitioner(
-            101, 
-            "Dr. John Doe", 
-            new String[]{"Monday", "Wednesday"}, 
-            "General Practice"
-        );
-        System.out.println("Does gp1 represent the same professional as sameGp? " + gp1.equals(sameGp)
-    ); // Should be true
+                101,
+                "Dr. John Doe",
+                new String[] { "Monday", "Wednesday" },
+                "General Practice");
+        System.out.println("Does gp1 represent the same professional as sameGp? " + gp1.equals(sameGp)); // Should be
+                                                                                                         // true
 
     }
 
 }
-
-
-
-
-
-

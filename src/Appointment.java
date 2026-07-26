@@ -4,9 +4,9 @@ public class Appointment implements Comparable<Appointment> {
     private String appointmentTime;
 
     public Appointment(
-        Patient patient, 
-        HealthProfessional healthProfessional, 
-        String appointmentTime) {
+            Patient patient,
+            HealthProfessional healthProfessional,
+            String appointmentTime) {
         if (patient == null) {
             throw new IllegalArgumentException("Patient cannot be null.");
         }
@@ -40,9 +40,9 @@ public class Appointment implements Comparable<Appointment> {
 
     @Override
     public String toString() {
-        return "Appointment Time: " + appointmentTime + "\n" + patient + "\nhealthProfessional;" + "\n" + healthProfessional;
+        return "Appointment Time: " + appointmentTime + "\n" + patient + "\nhealthProfessional;" + "\n"
+                + healthProfessional;
 
-        
     }
-    
+
 }

@@ -12,8 +12,8 @@ public abstract class HealthProfessional {
      * Creates a health professional.
      *
      * @param professionalId unique professional ID
-     * @param name professional's name
-     * @param availableDays days the professional works
+     * @param name           professional's name
+     * @param availableDays  days the professional works
      */
     public HealthProfessional(
             int professionalId,
@@ -79,12 +79,12 @@ public abstract class HealthProfessional {
     }
 
     @Override
-    public boolean equals(Object object){
-        if (this == object){
+    public boolean equals(Object object) {
+        if (this == object) {
             return true;
         }
         if (object == null
-            || !(object instanceof HealthProfessional)) {
+                || !(object instanceof HealthProfessional)) {
             return false;
         }
 
@@ -92,8 +92,9 @@ public abstract class HealthProfessional {
 
         return professionalId == other.professionalId;
     }
+
     @Override
-    public int hashCode(){
+    public int hashCode() {
         return professionalId;
     }
 }

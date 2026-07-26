@@ -2,7 +2,6 @@ public class Dietitian extends HealthProfessional {
 
     private String nutritionSpecialty;
 
-
     public Dietitian(
             int professionalId,
             String name,
@@ -18,14 +17,13 @@ public class Dietitian extends HealthProfessional {
 
         this.nutritionSpecialty = nutritionSpecialty;
     }
-    
+
     public String getNutritionSpecialty() {
         return nutritionSpecialty;
     }
 
     public void createDietPlan() {
-        System.out.println
-        (getName() + " can create a personalized diet plan.");
+        System.out.println(getName() + " can create a personalized diet plan.");
     }
 
     @Override
