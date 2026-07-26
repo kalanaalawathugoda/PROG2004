@@ -38,7 +38,18 @@ public class AssignmentOne {
         System.out.println();
         
         nurse1.takeBloodSample();
-    }
 
+            Dietitian dietitian1 = new Dietitian(
+            401,
+            "Michael Brown",
+            new String[]{"Wednesday", "Friday", "Saturday"},
+            "Clinical Nutrition"
+        );
 
+        System.out.println();
+        System.out.println(dietitian1);
+        System.out.println();
+        
+        dietitian1.createDietPlan();
     }
+}
