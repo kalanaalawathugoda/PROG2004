@@ -136,6 +136,18 @@ public class AssignmentOne {
 
         System.out.println(appointment2);
 
+        System.out.println();
+        System.out.println("_________Proffessional Equality test_________");
+
+        GeneralPractitioner sameGp = new GeneralPractitioner(
+            101, 
+            "Dr. John Doe", 
+            new String[]{"Monday", "Wednesday"}, 
+            "General Practice"
+        );
+        System.out.println("Does gp1 represent the same professional as sameGp? " + gp1.equals(sameGp)
+    ); // Should be true
+
     }
 
 }

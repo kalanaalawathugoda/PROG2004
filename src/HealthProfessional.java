@@ -77,4 +77,23 @@ public abstract class HealthProfessional {
                 + "\nName: " + name
                 + "\nAvailable Days: " + days;
     }
+
+    @Override
+    public boolean equals(Object object){
+        if (this == object){
+            return true;
+        }
+        if (object == null
+            || !(object instanceof HealthProfessional)) {
+            return false;
+        }
+
+        HealthProfessional other = (HealthProfessional) object;
+
+        return professionalId == other.professionalId;
+    }
+    @Override
+    public int hashCode(){
+        return professionalId;
+    }
 }
