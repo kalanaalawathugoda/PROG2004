@@ -8,48 +8,97 @@ public class AssignmentOne {
             101,
                 "Dr Sarah Wilson",
                 new String[]{"Monday", "Wednesday", "Friday"},
-                "Room 1");
+                "Room 1"
+        );
 
-        System.out.println(gp1);
-        System.out.println();
-        
-        gp1.prescribeMedicine();
+        GeneralPractitioner gp2 = new GeneralPractitioner(
+            102,
+                "Dr David Lee",
+                new String[]{"Tuesday", "Thursday"},
+                "Room 2"
+        );
+                
+        GeneralPractitioner gp3 = new GeneralPractitioner(
+            103,
+                "Dr Olivia Martinez",
+                new String[]{"Monday", "Thursday"},
+                "Room 3"
+        );
 
-            Specialist specialist1 = new Specialist(
+        Specialist specialist1 = new Specialist(
             201,
-            "Dr John Smith",
-            new String[]{"Monday", "Thursday"},
-            "Cardiology");
-        
-        System.out.println();    
-        System.out.println(specialist1);
-        System.out.println();
-        
-        specialist1.provideSpecialistConsultation();
+                "Dr John Smith",
+                new String[]{"Monday", "Thursday"},
+                "Cardiology"
+        );
+
+        Specialist specialist2 = new Specialist(
+            202,
+                "Dr Emily Johnson",
+                new String[]{"Tuesday", "Friday"},
+                "Dermatology"
+        );
 
         Nurse nurse1 = new Nurse(
             301,
-            "Nurse Emily Johnson",
-            new String[]{"Tuesday", "Thursday"},
-            "Senior Nurse");
-
-        System.out.println();
-        System.out.println(nurse1);
-        System.out.println();
-        
-        nurse1.takeBloodSample();
-
-            Dietitian dietitian1 = new Dietitian(
-            401,
-            "Michael Brown",
-            new String[]{"Wednesday", "Friday", "Saturday"},
-            "Clinical Nutrition"
+                "Nurse Emily Johnson",
+                new String[]{"Tuesday", "Thursday"},
+                "Senior Nurse"
         );
 
+        Nurse nurse2 = new Nurse(
+            302,
+                "Nurse Michael Brown",
+                new String[]{"Monday", "Wednesday"},
+                "Junior Nurse"
+        );
+
+        Dietitian dietitian1 = new Dietitian(
+            401,
+                "Michael Brown",
+                new String[]{"Wednesday", "Friday", "Saturday"},
+                "Clinical Nutrition"
+        );
+
+        Dietitian dietitian2 = new Dietitian(
+            402,
+                "Sarah Lee",
+                new String[]{"Tuesday", "Thursday"},
+                "Sports Nutrition"
+        );
+
+        HealthProfessional[] professionals = {
+            gp1, 
+            gp2, 
+            gp3,
+            specialist1, 
+            specialist2,
+            nurse1, 
+            nurse2,
+            dietitian1, 
+            dietitian2
+        };
+
+        System.out.println("_______List of Health Professionals_______");
+        for (HealthProfessional professional : professionals) {
+            System.out.println();
+            System.out.println(professional);
+            System.out.println("__________________________________________");
+        }
+
         System.out.println();
-        System.out.println(dietitian1);
-        System.out.println();
-        
+        System.out.println("_______Proffessional Specific Behaviours_______");
+
+        gp1.prescribeMedicine();
+        specialist1.provideSpecialistConsultation();
+        nurse1.takeBloodSample();
         dietitian1.createDietPlan();
+
     }
 }
+
+
+
+
+
+
