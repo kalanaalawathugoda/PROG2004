@@ -157,6 +157,24 @@ public class AppointmentManager {
 
     }
 
+    public void displayAllAppointments() {
+
+    System.out.println();
+    System.out.println("____________ALL APPOINTMENTS____________");
+
+    if (appointments.isEmpty()) {
+        System.out.println(
+                "WARNING: There are no appointments to display.");
+        return;
+    }
+
+    for (Appointment appointment : appointments) {
+        System.out.println();
+        System.out.println(appointment);
+        System.out.println("________________________________");
+    }
+}
+
     public void displaySortedAppointmentsByProfessionalId(
         int professionalId){
         System.out.println();
@@ -182,4 +200,58 @@ public class AppointmentManager {
             System.out.println("__________________________");
         }
     }
- }
+
+    public boolean cancelAppointmentByPatientPhone(String mobileNumber) {
+
+    for (int i = appointments.size() - 1; i >= 0; i--) {
+
+        Appointment appointment = appointments.get(i);
+
+        if (appointment.getPatient()
+                .getMobileNumber()
+                .equals(mobileNumber)) {
+
+            appointments.remove(i);
+
+            System.out.println(
+                    "SUCCESS: Appointment for patient phone "
+                            + mobileNumber
+                            + " was cancelled.");
+
+            return true;
+        }
+    }
+
+    System.out.println(
+            "WARNING: No appointment found for patient phone "
+                    + mobileNumber + ".");
+
+    return false;
+}
+
+    public boolean cancelAppointment(
+        int professionalId, 
+        String appointmentTime) {
+
+            for (int i = 0; i < appointments.size(); i++) {
+
+                Appointment appointment = appointments.get(i);
+
+                boolean sameProfessional = appointment.getHealthProfessional().getProfessionalId() == professionalId;
+                boolean sameTime = appointment.getAppointmentTime().equals(appointmentTime);
+
+                if (sameProfessional && sameTime) {
+                    appointments.remove(i);
+                    System.out.println("SUCCESS: Appointment for Professional ID: " + professionalId + " at " + appointmentTime + " has been canceled.");
+                    return true;
+                }
+            }
+            System.out.println("FAILURE: No appointment found for Professional ID: " + professionalId + " at " + appointmentTime);
+            return false;
+        }
+        
+    }
+
+    
+   
+

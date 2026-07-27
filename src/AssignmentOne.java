@@ -205,7 +205,22 @@ public class AssignmentOne {
 
         appointmentManager.displayAppointmentsSortedByTime();
         appointmentManager.displaySortedAppointmentsByProfessionalId(101);
+ 
+        System.out.println();
+        System.out.println("_________Cancellation Tests_________");
+
+        appointmentManager.cancelAppointment(101, "2024-06-15 10:00 AM");
+        appointmentManager.displayAppointments();
+
+        appointmentManager.cancelAppointmentByPatientPhone("0771234567");
+        appointmentManager.displayAllAppointments();
+
+        System.out.println();
+        System.out.println("_________Cancellation Test for Non-Existent Appointment_________");
+        appointmentManager.cancelAppointment(999, "2024-06-15 10:00 AM");
+        appointmentManager.cancelAppointmentByPatientPhone("0400 000 000");
 
     }
 
-}
+
+} 
