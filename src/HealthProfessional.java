@@ -78,6 +78,12 @@ public abstract class HealthProfessional {
                 + "\nAvailable Days: " + days;
     }
 
+    /**
+     * Returns the professional type.
+     *
+     * @return General Practitioner
+     */
+
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -92,6 +98,12 @@ public abstract class HealthProfessional {
 
         return professionalId == other.professionalId;
     }
+
+    /**
+     * Returns the GP's full details.
+     *
+     * @return formatted general practitioner details
+     */
 
     @Override
     public int hashCode() {

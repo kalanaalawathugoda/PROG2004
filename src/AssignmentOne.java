@@ -1,8 +1,22 @@
+/**
+ * Main class.
+ *
+ * Demonstrates the complete health service
+ * appointment system.
+ */
 public class AssignmentOne {
+
+    /**
+     * Runs the appointment system demonstration.
+     *
+     * @param args command-line arguments
+     */
 
     public static void main(String[] args) {
         System.out.println("________Health Service Appointment System________");
         System.out.println();
+
+        // Create three general practitioners.
 
         GeneralPractitioner gp1 = new GeneralPractitioner(
                 101,
@@ -22,6 +36,8 @@ public class AssignmentOne {
                 new String[] { "Monday", "Thursday" },
                 "Room 3");
 
+        // Create two specialists.
+
         Specialist specialist1 = new Specialist(
                 201,
                 "Dr John Smith",
@@ -33,6 +49,8 @@ public class AssignmentOne {
                 "Dr Emily Johnson",
                 new String[] { "Tuesday", "Friday" },
                 "Dermatology");
+
+        // Create two nurses.
 
         Nurse nurse1 = new Nurse(
                 301,
@@ -46,6 +64,8 @@ public class AssignmentOne {
                 new String[] { "Monday", "Wednesday" },
                 "Junior Nurse");
 
+        // Create two dietitians.
+
         Dietitian dietitian1 = new Dietitian(
                 401,
                 "Michael Brown",
@@ -57,6 +77,12 @@ public class AssignmentOne {
                 "Sarah Lee",
                 new String[] { "Tuesday", "Thursday" },
                 "Sports Nutrition");
+
+        /*
+         * Store different subclasses using their common
+         * HealthProfessional parent type. This demonstrates
+         * polymorphism.
+         */
 
         HealthProfessional[] professionals = {
                 gp1,
@@ -77,6 +103,8 @@ public class AssignmentOne {
             System.out.println("__________________________________________");
         }
 
+        // Demonstrate behaviours unique to each professional type.
+
         System.out.println();
         System.out.println("_______Proffessional Specific Behaviours_______");
 
@@ -84,6 +112,8 @@ public class AssignmentOne {
         specialist1.provideSpecialistConsultation();
         nurse1.takeBloodSample();
         dietitian1.createDietPlan();
+
+        // Create patients.
 
         System.out.println();
         System.out.println("_______Patient Details_______");
@@ -100,6 +130,11 @@ public class AssignmentOne {
         System.out.println("__________________________________________");
         System.out.println();
         System.out.println(patient2);
+
+        /*
+         * Create appointments for the current day.
+         * Only the appointment time is stored.
+         */
 
         System.out.println();
         System.out.println("_______Appointment Details_______");
@@ -123,6 +158,11 @@ public class AssignmentOne {
 
         System.out.println(appointment2);
 
+        /*
+         * Professionals with the same unique ID are
+         * considered equal.
+         */
+
         System.out.println();
         System.out.println("_________Proffessional Equality test_________");
 
@@ -131,8 +171,10 @@ public class AssignmentOne {
                 "Dr. John Doe",
                 new String[] { "Monday", "Wednesday" },
                 "General Practice");
-        System.out.println("Does gp1 represent the same professional as sameGp? " + gp1.equals(sameGp)); // Should be
-                                                                                                         // true
+        System.out.println("Does gp1 represent the same professional as sameGp? " + gp1.equals(sameGp));
+
+        // Create the appointment manager.
+
         System.out.println();
         System.out.println("_________Appointment Management");
 
@@ -149,6 +191,11 @@ public class AssignmentOne {
                 nurse1,
                 "2024-06-15 10:00 AM");
 
+        /*
+         * This appointment uses the same time as appointment1,
+         * but a different professional, so it is valid.
+         */
+
         appointmentManager.addAppointment(appointment3);
         appointmentManager.displayAppointments();
 
@@ -162,6 +209,11 @@ public class AssignmentOne {
                 "2024-06-16 11:00 AM");
 
         appointmentManager.addAppointment(appointment4);
+
+        /*
+         * Attempt to book gp1 at 10:00 again.
+         * The manager should reject this double-booking.
+         */
 
         System.out.println();
         System.out.println("_________Double Booking Test_________");
@@ -177,6 +229,11 @@ public class AssignmentOne {
 
         appointmentManager.addAppointment(duplicateAppointment);
 
+        /*
+         * 09:15 is invalid because appointments are
+         * available only in 30-minute intervals.
+         */
+
         System.out.println();
         System.out.println("_________Invalid Time Test_________");
 
@@ -187,6 +244,8 @@ public class AssignmentOne {
 
         appointmentManager.addAppointment(invalidTimeAppointment);
 
+        // Demonstrate filtering using both required options.
+
         System.out.println();
         System.out.println("_________Filtering Tests_________");
 
@@ -195,25 +254,41 @@ public class AssignmentOne {
         appointmentManager.displayAppointmentsByPatientPhone(
                 "0771234567");
 
+        // Demonstrate unsuccessful filter operations.
+
         appointmentManager.displayAppointmentsByProfessionalId(999);
 
         appointmentManager.displayAppointmentsByPatientPhone(
                 "0400 000 000");
+
+        // Display all appointments and a filtered list in time order.
 
         System.out.println();
         System.out.println("_________Sorting Tests_________");
 
         appointmentManager.displayAppointmentsSortedByTime();
         appointmentManager.displaySortedAppointmentsByProfessionalId(101);
- 
+
+        /*
+         * Cancel an appointment using professional ID
+         * and appointment time.
+         */
+
         System.out.println();
         System.out.println("_________Cancellation Tests_________");
 
         appointmentManager.cancelAppointment(101, "2024-06-15 10:00 AM");
         appointmentManager.displayAppointments();
 
+        // Cancel an appointment using the patient phone number.
+
         appointmentManager.cancelAppointmentByPatientPhone("0771234567");
+
+        // Display the collection after cancellation.
+
         appointmentManager.displayAllAppointments();
+
+        // Demonstrate cancellation warning messages.
 
         System.out.println();
         System.out.println("_________Cancellation Test for Non-Existent Appointment_________");
@@ -222,5 +297,4 @@ public class AssignmentOne {
 
     }
 
-
-} 
+}
